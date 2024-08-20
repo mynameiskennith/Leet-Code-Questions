@@ -1,4 +1,16 @@
-
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        seen=[]
+        while n!=1:
+            num=str(n)
+            summ=0
+            for i in num:
+                summ+=int(i)**2
+            if summ in seen:
+                return False
+            seen.append(summ)
+            n=summ
+        return True
 
 # class Solution:
 #     def isHappy(self, n: int) -> bool:
